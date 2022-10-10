@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html,
+.App {
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1e1e1e;
+  color: #cccccc;
+}
+.title {
+  padding: 20px;
+  font-size: large;
+  background-color: #222222;
+  color: aliceblue;
+  user-select: none;
+}
+.react {
+  color: #61d9fa;
+}
+.todos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 5px;
+}
+.todo {
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-height: 50px;
+}
+.todo-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+.todo:hover {
+  border: 2px solid #61d9fa;
+  border-radius: 5px;
+}
+.options {
+  color: #61d9fa;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+}
+.options:hover {
+  text-decoration: underline;
+}
+.todo-options {
+  position: absolute;
+  top: 35px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  background-color: #272727;
+  padding: 15px 0;
+  border-radius: 5px;
+  width: fit-content;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.edit,
+.delete {
+  width: 100%;
+  padding: 0 20px;
+  cursor: pointer;
+  user-select: none;
+}
+.edit:hover,
+.delete:hover {
+  background-color: #707070;
+  color: #fff;
+}
+
+.time {
+  font-size: small;
+  padding-left: 10px;
+}
+
+#form-todo {
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+}
+#text-todo {
+  width: 80%;
+  background-color: #272727;
+  border: none;
+  outline: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 2px solid #61d9fa;
+  padding: 10px 5px;
+  color: #cccccc;
+}
+#submit-todo {
+  border: none;
+  background-color: #61d9fa;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  color: #1e1e1e;
+}
+.display {
+  display: none;
+}
