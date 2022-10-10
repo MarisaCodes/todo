@@ -28,25 +28,31 @@ html,
 .todos {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
-  padding: 10px 5px;
+  padding: 10px 5px 100px 5px;
 }
 .todo {
+  width: 90%;
   padding: 10px;
   border: 2px solid #333;
   border-radius: 5px;
   display: flex;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  max-height: 50px;
+  user-select: none;
+  word-break: break-all;
+}
+.completed {
+  background-color: rgba(0, 128, 0, 0.25);
 }
 .todo-text {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  user-select: none;
 }
 .todo:hover {
   border: 2px solid #61d9fa;
@@ -77,14 +83,16 @@ html,
   z-index: 1;
 }
 .edit,
-.delete {
+.delete,
+.option {
   width: 100%;
   padding: 0 20px;
   cursor: pointer;
   user-select: none;
 }
 .edit:hover,
-.delete:hover {
+.delete:hover,
+.option:hover {
   background-color: #707070;
   color: #fff;
 }

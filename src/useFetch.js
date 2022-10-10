@@ -16,7 +16,7 @@ const useFetch = () => {
         setStat(err.message);
       });
   }, []);
-  return { data, loading, setLoading, stat };
+  return { data, loading, setLoading, stat, setStat, setData };
 };
 
 export default useFetch;

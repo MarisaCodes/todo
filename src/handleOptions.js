@@ -13,9 +13,6 @@ export const handleShowOptions = (toggle, setToggle, id) => {
       Object.keys(toggle)[0] &&
       Object.keys(toggle)[0] !== String(id)
     ) {
-      document
-        .getElementById(`todo${Object.keys(toggle)[0]}`)
-        ?.classList.add("display");
       setTimeout(() => {
         setToggle({ [id]: true });
       }, 100);
