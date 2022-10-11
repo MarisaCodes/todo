@@ -4,7 +4,7 @@ function uploadData(newData) {
   return new Promise((resolve) => {
     setTimeout(() => {
       localStorage.setItem("db", JSON.stringify({ todos: newData }));
-      resolve(1);
+      resolve(newData);
     }, 1000);
   });
 }
@@ -17,9 +17,9 @@ const TodoForm = ({ data, setLoading, setStat, setData }) => {
     setTodoText("");
     setStat("Adding todo...");
     const newData = [...data, { id: data.length + 1, text: todoText }];
-    uploadData(newData, todoText, setLoading).then(() => {
+    uploadData(newData, todoText, setLoading).then((res) => {
       setLoading(false);
-      setData(newData);
+      setData(res);
     });
   };
   return (

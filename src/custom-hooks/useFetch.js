@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import fetchTodos from "./fetchLocalStorage";
+import fetchTodos from "../localstorage/fetchLocalStorage";
 
 const useFetch = () => {
   const [data, setData] = useState(null);
