@@ -1,39 +1,44 @@
-import { useState } from "react";
+import { handleSubmit } from "../onsubmit/handleSubmit";
 
-function uploadData(newData) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      localStorage.setItem("db", JSON.stringify({ todos: newData }));
-      resolve(newData);
-    }, 1000);
-  });
-}
-
-const TodoForm = ({ data, setLoading, setStat, setData }) => {
-  const [todoText, setTodoText] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setTodoText("");
-    setStat("Adding todo...");
-    const newData = [...data, { id: data.length + 1, text: todoText }];
-    uploadData(newData, todoText, setLoading).then((res) => {
-      setLoading(false);
-      setData(res);
-    });
-  };
+const TodoForm = ({
+  data,
+  setLoading,
+  setStat,
+  setData,
+  todoText,
+  setTodoText,
+  id,
+  setEditing,
+  editing,
+}) => {
   return (
-    <form id="form-todo" onSubmit={(e) => handleSubmit(e)}>
+    <form
+      className="form"
+      onSubmit={(e) =>
+        handleSubmit(
+          e,
+          "db",
+          setLoading,
+          setTodoText,
+          setStat,
+          data,
+          setData,
+          todoText,
+          setEditing,
+          id
+        )
+      }
+    >
       <input
+        className="input"
         autoComplete="off"
         type="text"
         placeholder="Write your todo..."
-        id="text-todo"
         value={todoText}
         required
         onChange={(e) => setTodoText(e.target.value)}
       />
-      <input type="submit" value="Add" id="submit-todo" />
+      <input type="submit" value={editing ? "Edit" : "Add"} className="btn" />
     </form>
   );
 };

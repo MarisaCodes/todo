@@ -1,15 +1,15 @@
-function fetchLocalStorage() {
+function fetchLocalStorage(db) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(localStorage.getItem("db"));
+      resolve(localStorage.getItem(db));
     }, 1500);
   });
 }
 
-async function fetchTodos() {
-  const db = await fetchLocalStorage();
-  if (db) {
-    return JSON.parse(db).todos;
+async function fetchTodos(db) {
+  const db_ = await fetchLocalStorage(db);
+  if (db_) {
+    return JSON.parse(db_);
   } else {
     throw Error("unable to get resource");
   }

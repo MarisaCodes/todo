@@ -1,5 +1,19 @@
 import Todo from "./Todo";
-const Todos = ({ arrTodos, toggle, setToggle }) => {
+
+const Todos = ({
+  arrTodos,
+  toggle,
+  setToggle,
+  editing,
+  setEditing,
+  completed,
+  setCompleted,
+  setLoading,
+  setStat,
+  setData,
+  todoText,
+  setTodoText
+}) => {
   return (
     <div className="todos">
       {arrTodos.map((todo) => (
@@ -9,6 +23,16 @@ const Todos = ({ arrTodos, toggle, setToggle }) => {
           text={todo.text}
           toggle={toggle}
           setToggle={setToggle}
+          editing={editing}
+          setEditing={setEditing}
+          completed={completed}
+          setCompleted={setCompleted}
+          data={arrTodos}
+          setLoading={setLoading}
+          setStat={setStat}
+          setData={setData}
+          todoText={todoText}
+          setTodoText={setTodoText}
         />
       ))}
     </div>

@@ -104,12 +104,14 @@ html,
   padding-left: 10px;
 }
 
-#form-todo {
+#form-todo,
+.form {
   text-align: center;
   padding: 20px 0;
   width: 100%;
 }
-#text-todo {
+#text-todo,
+.input {
   width: 80%;
   background-color: #272727;
   border: none;
@@ -120,7 +122,8 @@ html,
   padding: 10px 5px;
   color: #cccccc;
 }
-#submit-todo {
+#submit-todo,
+.btn {
   border: none;
   background-color: #61d9fa;
   padding: 5px;
