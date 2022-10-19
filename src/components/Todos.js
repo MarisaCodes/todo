@@ -1,39 +1,14 @@
-import Todo from "./Todo";
-
-const Todos = ({
-  arrTodos,
-  toggle,
-  setToggle,
-  editing,
-  setEditing,
-  completed,
-  setCompleted,
-  setLoading,
-  setStat,
-  setData,
-  todoText,
-  setTodoText
-}) => {
+import { useHref,Link } from "react-router-dom";
+const Todos = () => {
+  const href = useHref();
+  const todos = JSON.parse(localStorage.getItem("db")).todos;
   return (
     <div className="todos">
-      {arrTodos.map((todo) => (
-        <Todo
-          key={todo.id}
-          id={todo.id}
-          text={todo.text}
-          toggle={toggle}
-          setToggle={setToggle}
-          editing={editing}
-          setEditing={setEditing}
-          completed={completed}
-          setCompleted={setCompleted}
-          data={arrTodos}
-          setLoading={setLoading}
-          setStat={setStat}
-          setData={setData}
-          todoText={todoText}
-          setTodoText={setTodoText}
-        />
+      {todos.map((todo) => (
+        <div key={todo.id} className="todo">
+          {/* <Link to={`:id${}`} className="todo-text">{todo.text}</Link> */}
+          {href === "/" && <div className="options">options</div>}
+        </div>
       ))}
     </div>
   );
